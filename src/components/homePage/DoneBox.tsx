@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Card from './card';
 import CardData from '../../interfaces/cardData';
 
@@ -17,7 +17,11 @@ const DoneBox = ({title = "To Do",data=[]}: DoneBoxProps) => {
             </div>
             <div className='flex flex-col py-3 gap-y-2'>
                 {data.length === 0 ? 
-                    <div>No data</div> : 
+                    <>
+                    <Card /> <Card /> <Card /> <Card /> <Card /> 
+                    </>
+                     
+                     : 
                     data.map((cardData) => <Card data={cardData} />
                 )}
             </div>

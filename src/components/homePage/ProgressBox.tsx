@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from './card';
 import CardData from '../../interfaces/cardData';
 
@@ -15,8 +14,12 @@ const ProgressBox = ({title = "On Progress", data=[]}: ProgressBoxProps) => {
                 <button className =  "hover:bg-[#FFA50072] duration-200 text-[#FFA500] px-2 bg-[#FFA50042] rounded-lg">+</button>
             </div>
             <div className='flex flex-col py-3 gap-y-2'>
-                {data.length === 0 ? 
-                    <div>No data</div> : 
+            {data.length === 0 ? 
+                    <>
+                    <Card /> <Card /> <Card /> <Card /> <Card /> 
+                    </>
+                     
+                     : 
                     data.map((cardData) => <Card data={cardData} />
                 )}
             </div>

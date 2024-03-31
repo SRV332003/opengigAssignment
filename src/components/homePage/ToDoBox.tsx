@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Card from './card';
 import CardData from '../../interfaces/cardData';
 
@@ -16,8 +16,12 @@ const ToDoBox = ({ title = "Done", data=[] }: ToDoBoxProps) => {
                 <button className="hover:bg-[#5130e572] duration-200 text-[#5030E5] px-2 bg-[#5130e542] rounded-lg">+</button>
             </div>
             <div className='flex flex-col py-3 gap-y-2'>
-                {data.length === 0 ? 
-                    <div>No data</div> : 
+            {data.length === 0 ? 
+                    <>
+                    <Card /> <Card /> <Card /> <Card /> <Card /> 
+                    </>
+                     
+                     : 
                     data.map((cardData) => <Card data={cardData} />
                 )}
             </div>
